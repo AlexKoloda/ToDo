@@ -3,34 +3,44 @@ const inputBox = document.getElementById('input-box');
 const toDoList = document.getElementById('to-do-list');
 
 function addTask() {
-    if (inputBox.value === '') {
-         alert('Поле ввода пустое');
+    let trimmedText = inputBox.value.trim();
 
-    } else {
-       let li = document.createElement('li');
-       li.innerHTML = inputBox.value;
-       toDoList.appendChild(li);     
-       let span = document.createElement ('span');
-       span.innerHTML = '\u00d7';
-       li.appendChild(span);
-       inputBox.value = '';
-       saveData();
-    }  
-} 
-
-inputBox.addEventListener('keypress', function(e) {
-    if (e.key === 'Enter') {
-    document.getElementById('myButton').click();
+    if (!trimmedText.length) {
+        alert('Поле ввода пустое');
+        return;
     }
+
+    let li = document.createElement('li');
+    let textSpan = document.createElement('span');
+    textSpan.classList.add('to-do-text');
+    textSpan.innerHTML = trimmedText;
+    li.appendChild(textSpan);
+    toDoList.appendChild(li);
+    let span = document.createElement('span');
+    span.innerHTML = '\u00d7';
+    li.appendChild(span);
+    inputBox.value = '';
+    saveData();
+}
+
+inputBox.addEventListener('keypress', function (e) {
+    if (e.key !== 'Enter') {
+        return;
+    }
+    document.getElementById('myButton').click();
 })
 
-toDoList.addEventListener('click',  function(e){  
+toDoList.addEventListener('click', function (e) {
 
-(e.target.tagName === 'LI') ? e.target.classList.toggle('checked') : e.target.parentElement.remove();              
-saveData();
+    if (e.target.classList.contains("to-do-text")) {
+        e.target.classList.toggle('checked')
+    } else {
+        e.target.parentElement.remove();
+    } return;
+    saveData();
 });
 
-inputBox.addEventListener('keypress', function(a) {
+inputBox.addEventListener('keypress', function (a) {
 
 })
 
@@ -39,9 +49,9 @@ inputBox.addEventListener('keypress', function(a) {
 
 function saveData() {
     localStorage.setItem('data', toDoList.innerHTML);
-} 
+}
 
-function showTask () {
+function showTask() {
     toDoList.innerHTML = localStorage.getItem('data');
 
 }
