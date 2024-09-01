@@ -40,20 +40,12 @@ toDoList.addEventListener('click', function (e) {
     saveData();
 });
 
-inputBox.addEventListener('keypress', function (a) {
-
-})
-
-
-
-
 function saveData() {
     localStorage.setItem('data', toDoList.innerHTML);
 }
 
 function showTask() {
     toDoList.innerHTML = localStorage.getItem('data');
-
 }
 
 showTask();
