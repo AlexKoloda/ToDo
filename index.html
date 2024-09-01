@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <title>Список дел</title>
+    <link rel="stylesheet" href="./normalize.css">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap" rel="stylesheet">
+    <header>
+        <a href="#">
+        <img class="logo-img" src="./img/Logo.png"/>
+        </a>
+        <div class="header-contacts">
+            <a class="logo" href="#">KOLODA.TD</a>
+            <a href="tel:+79000000000">+7-900-000-00-00</a>
+        </div>
+    </header>
+<body>
+    <section class="wrapper-outer section-main">
+        <div class="wrapper-inner">
+            <div class="main-title">
+            <h1> ToDo</h1>
+            <p class="blockquote">Планируйте ваши дела и отмечайте их выполнение.</p>
+            </div>
+            <div class="to-do-container">
+                <h2>Список задач</h2>
+                <div class="to-do-input">
+                    <input type="text" id="input-box" placeholder="Введите свой текст" maxlength="30"/>
+                    <button class="to-do-button" id="myButton" onclick="addTask()">ок</button>
+                </div>
+                <ul id="to-do-list"></ul>
+            </div>
+        </div>
+    </section>
+</body>
+<footer class="footer">
+    <div class="footer-logo">
+        <a class="logo" href="#">KOLODA.TD</a>
+    </div>
+    <a href="tel:+790000000">+7-900-000-00-00</a>
+    <a href="mailto:Example@yandex.ru">Напишите мне</a>  
+    </footer>
+<script src="script.js"></script>
+</html>
