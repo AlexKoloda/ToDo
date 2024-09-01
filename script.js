@@ -11,16 +11,22 @@ function addTask() {
     }
 
     let li = document.createElement('li');
+    let chekBox = document.createElement('div');
+    chekBox.classList.add('check-box-img')
+    chekBox.innerHTML = '';
+    li.appendChild(chekBox);
     let textSpan = document.createElement('span');
     textSpan.classList.add('to-do-text');
     textSpan.innerHTML = trimmedText;
     li.appendChild(textSpan);
     toDoList.appendChild(li);
     let span = document.createElement('span');
+    span.classList.add('to-do-delete');
     span.innerHTML = '\u00d7';
     li.appendChild(span);
     inputBox.value = '';
     saveData();
+
 }
 
 inputBox.addEventListener('keypress', function (e) {
@@ -36,9 +42,16 @@ toDoList.addEventListener('click', function (e) {
         e.target.classList.toggle('checked')
     } else {
         e.target.parentElement.remove();
-    } return;
+    }
     saveData();
 });
+
+inputBox.addEventListener('keypress', function (a) {
+
+})
+
+
+
 
 function saveData() {
     localStorage.setItem('data', toDoList.innerHTML);
@@ -46,6 +59,7 @@ function saveData() {
 
 function showTask() {
     toDoList.innerHTML = localStorage.getItem('data');
+
 }
 
 showTask();
