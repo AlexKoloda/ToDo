@@ -10,7 +10,7 @@ function addTask() {
         return;
     }
 
-    let li = document.createElement('li');    
+    let li = document.createElement('li');
     let textSpan = document.createElement('span');
     textSpan.classList.add('to-do-text');
     textSpan.innerHTML = trimmedText;
@@ -22,7 +22,6 @@ function addTask() {
     li.appendChild(span);
     inputBox.value = '';
     saveData();
-
 }
 
 inputBox.addEventListener('keypress', function (e) {
@@ -33,10 +32,10 @@ inputBox.addEventListener('keypress', function (e) {
 })
 
 toDoList.addEventListener('click', function (e) {
-
     if (e.target.classList.contains("to-do-text")) {
-        e.target.classList.toggle('checked');
-    } else {
+        e.target.classList.toggle('checked')
+        return;
+    } else if (e.target.classList.contains('to-do-delete')) {
         e.target.parentElement.remove();
     }
     saveData();
