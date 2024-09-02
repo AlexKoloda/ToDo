@@ -39,19 +39,12 @@ inputBox.addEventListener('keypress', function (e) {
 toDoList.addEventListener('click', function (e) {
 
     if (e.target.classList.contains("to-do-text")) {
-        e.target.classList.toggle('checked')
+        e.target.classList.toggle('checked');
     } else {
         e.target.parentElement.remove();
     }
     saveData();
 });
-
-inputBox.addEventListener('keypress', function (a) {
-
-})
-
-
-
 
 function saveData() {
     localStorage.setItem('data', toDoList.innerHTML);
@@ -59,7 +52,6 @@ function saveData() {
 
 function showTask() {
     toDoList.innerHTML = localStorage.getItem('data');
-
 }
 
 showTask();
