@@ -10,11 +10,7 @@ function addTask() {
         return;
     }
 
-    let li = document.createElement('li');
-    let chekBox = document.createElement('div');
-    chekBox.classList.add('check-box-img')
-    chekBox.innerHTML = '';
-    li.appendChild(chekBox);
+    let li = document.createElement('li');    
     let textSpan = document.createElement('span');
     textSpan.classList.add('to-do-text');
     textSpan.innerHTML = trimmedText;
