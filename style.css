@@ -1,97 +1,155 @@
-body {
-    background-color: antiquewhite;
-    min-height: 100vh;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-
-    font-family: "Tiny5", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-}
-
-.calc {
-    border: 2px solid black;
-    border-radius: 10px;
-    box-shadow: 7px 7px 0px 0px rgb(0, 0, 0),
-        inset 2px 2px 0px rgb(255 255 255);
-    padding: 0px 10px 10px 10px;
-    background-color: rgb(120, 252, 175);
-
-    display: grid;
-    grid-template-columns: 60px 60px 60px 60px;
-    grid-auto-rows: 60px;
-    gap: 10px;
-}
-
-.calc-result {
-    grid-column: 1 / -1;
-    background-color: antiquewhite;
-    margin-left: -9px;
-    height: 88px;
-    width: 263px;
-    border-radius: 10PX;
-    border: none;
-    text-align: right;
-    text-transform: uppercase;
-    font-weight: bold;
-    font-size: 50px;
-    padding: 15px 16px 10px 9px;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    user-select: none;
-
-}
-
-.calc-input {
-    border: none;
-    width: 285px;
-    margin-left: -9px;
-    grid-column: 1 / -1;
-    background-color: antiquewhite;
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
-    font-size: 15px;
-    text-align: right;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    cursor: default;
-    user-select: none;
-}
-
-.calc-button {
-    background-color: antiquewhite;
-    border: 1px solid black;
-    border-radius: 10px;
-    box-shadow:
-        2px 3px 0px rgba(0, 0, 0, 0.726),
-        inset 3px 2px 0px rgb(255 255 255);
-    color: rgba(0, 0, 0, 0.685);
-    font-size: 20px;
-    font-weight: bold;
-    text-transform: uppercase;
-}
-
-.operator {
-    background-color: rgb(235, 210, 178);
-}
-
-.calc-button:hover {
-    background-color: rgb(255, 245, 232);
-    transition: 0.3s;
-    box-shadow: 1px 2px 0px rgba(0, 0, 0, 0.726);
+a {
+    text-decoration: none;
+    text-transform: none;
     color: rgb(0, 0, 0);
 }
-
-.calc-button:active {
-    box-shadow: none;
+body {
+    font-family: "Comfortaa", sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 29px;
+    letter-spacing: 0em;
+    color: rgba(20, 16, 36, 0.8);
+    text-align: left;
 }
-
+header {  
+    background: linear-gradient(45deg, #D76F30 25%, #bd632b 25%, #bd632b 50%, #D76F30 50%, #D76F30 75%, #bd632b 75%, #bd632b);
+    background-size:100px 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+}
+.logo-img {
+    height: 50px;
+}
+.header-contacts {
+    display: flex;
+    gap: 10px;
+}
+.wrapper-outer {
+    width: 100%;
+    min-height: 100vh;
+    background: #cee5e3;
+    background: -webkit-radial-gradient(circle farthest-side at center center, #ffffff 0%, #489b94 100%);
+    background: -moz-radial-gradient(circle farthest-side at center center, #ffffff 0%, #489b94 100%);
+    background: radial-gradient(circle farthest-side at center center, #ffffff 0%, #489b94 100%);
+}
+.wrapper-inner {
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+}
+.main-title {
+    text-align: left;
+    padding: 20px;
+}
+.to-do-container {
+    width: 100%;
+    max-width: 400px;
+    min-height: 7lh;
+    border-bottom-left-radius: 5%;
+    border-top-right-radius: 5%;
+    background-color: #ffffff;
+    padding: 40px 30px 40px;
+    background-size: cover;
+    background-position: center;
+    margin: 0 auto;
+}
 h1 {
+    color: rgb(0, 0, 0);
     text-transform: uppercase;
-    color: #78fcaf;
-    text-shadow: 3px 3px 0px black;
+    margin: 0;
+}
+footer {
+    
+    background-color: #D76F30;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: space-around;
+}
+ul li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    list-style: none;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%;
+}
+.to-do-text {
+
+    color: black;
+    max-width: 100%;
+    width: 100%;
+    text-overflow: ellipsis;
+    overflow: auto;
+    text-align: left;
+}
+li:hover {
+    background-color: #e0e0e0;
+    transition: 0.5s;
+}
+ul {
+    margin: 0;
+    padding: 0;
+}
+input {
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 10px;
+    background-color: #e0e0e0;
+}
+.to-do-input {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #e0e0e0;
+    padding-left: 20x;
+    margin-bottom: 25px;
+}
+.to-do-button {
+    border: none;
+    outline: none;
+    padding: 16px 20px;
+    background-color: #D76F30;
+    color: aliceblue;
+    font-size: 14px;
+    cursor: pointer;
+}
+.to-do-button:hover {
+    background: #c44b00;
+    color: #ffffff;
+    transition: 0.5s;
+}
+.checked {
+    text-decoration: line-through;
+    color: rgb(97, 97, 97);
+    transition: 0.5s;
+}
+ul li span {
+    width: 40px;
+    height: 40px;
+    font-size: 22px;
+    color: #D76F30;
+    line-height: 40px;
+    text-align: center;
+}
+.to-do-delete {
+    width: 40px;
+    height: 40px;
+    font-size: 22px;
+    color: #D76F30;
+    line-height: 40px;
+    text-align: center;
     user-select: none;
+}
+.to-do-delete:hover {
+    background: #c44b00;
+    color: #ffffff;
+    transition: 0.5s;
+    user-select: none;
+
 }
